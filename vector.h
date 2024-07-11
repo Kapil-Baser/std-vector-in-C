@@ -16,5 +16,6 @@ size_t capacity(vector *self);
 int pop(vector *self);
 int front(vector *self);
 int back(vector *self);
+void shrink_to_fit(vector *self);
 
 #endif /* VECTOR_H */

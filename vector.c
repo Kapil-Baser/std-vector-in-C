@@ -64,7 +64,7 @@ size_t capacity(vector *self)
 int pop(vector *self)
 {
     int temp;
-    if (self == NULL && self->size == 0)
+    if (self->array == NULL && self->size == 0)
     {
         return -1;
     }
@@ -75,7 +75,7 @@ int pop(vector *self)
 
 int front(vector *self)
 {
-    if (self != NULL)
+    if (self->array != NULL)
     {
         return self->array[0];
     }
@@ -84,9 +84,24 @@ int front(vector *self)
 
 int back(vector *self)
 {
-    if (self != NULL)
+    if (self->array != NULL)
     {
         return self->array[self->size - 1];
     }
     return -1;
+}
+
+void shrink_to_fit(vector *self)
+{
+    if (self->array == NULL || self->size == self->capacity)
+    {
+        return;
+    }
+    int *new = realloc(self->array, self->size);
+    if (new == NULL)
+    {
+        fprintf(stderr, "Shrinking failed.\n");
+        return;
+    }
+    self->array = new;
 }
