@@ -104,4 +104,13 @@ void shrink_to_fit(vector *self)
         return;
     }
     self->array = new;
+    self->capacity = self->size;
+}
+
+void destuctor(vector *self)
+{
+    free(self->array);
+    self->array = NULL;
+    self->size = 0;
+    self->capacity = 0;
 }
