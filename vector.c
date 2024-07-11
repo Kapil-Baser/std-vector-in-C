@@ -21,3 +21,32 @@ vector *construct(vector *self, size_t size, int value)
     }
     return (self);
 }
+
+void push_back(vector *self, int value)
+{
+    if (self->size == 0)
+    {
+        self->size = self->capacity = 1;
+        self->array = malloc(sizeof(int) * self->capacity);
+        if (self->array == NULL)
+        {
+            terminate("Memory allocation failed.");
+        }
+        self->array[0] = value;
+    }
+    else if (self->size == self->capacity)
+    {
+        self->capacity *= 2;
+        int *new = realloc(self->array, self->capacity);
+        if (new == NULL)
+        {
+            fprintf(stderr, "Reallocation failed.\n");
+        }
+        self->array = new;
+        self->array[self->size++] = value;
+    }
+    else
+    {
+        self->array[self->size++] = value;
+    }
+}
