@@ -7,6 +7,11 @@ int main(void)
 
     construct(&array, 1, 5);
     push_back(&array, 10);
-    int t = pop(&array);
+    push_back(&array, 15);
+    push_back(&array, 20);
+    
+    printf("The front of the array is: %d\n", front(&array));
+    printf("The back of the array is: %d\n", back(&array));
+
     return 0;
 }
