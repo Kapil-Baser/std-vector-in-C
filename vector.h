@@ -10,6 +10,6 @@ typedef struct vector
 }vector;
 
 vector *construct(vector *self, size_t size, int value);
-
+void push_back(vector *self, int value);
 
 #endif /* VECTOR_H */
