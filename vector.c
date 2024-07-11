@@ -72,3 +72,21 @@ int pop(vector *self)
     self->array[self->size] = 0;
     return temp;
 }
+
+int front(vector *self)
+{
+    if (self != NULL)
+    {
+        return self->array[0];
+    }
+    return -1;
+}
+
+int back(vector *self)
+{
+    if (self != NULL)
+    {
+        return self->array[self->size - 1];
+    }
+    return -1;
+}

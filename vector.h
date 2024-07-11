@@ -14,5 +14,7 @@ void push_back(vector *self, int value);
 size_t size(vector *self);
 size_t capacity(vector *self);
 int pop(vector *self);
+int front(vector *self);
+int back(vector *self);
 
 #endif /* VECTOR_H */
