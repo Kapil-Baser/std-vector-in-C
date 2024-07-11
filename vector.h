@@ -11,5 +11,8 @@ typedef struct vector
 
 vector *construct(vector *self, size_t size, int value);
 void push_back(vector *self, int value);
+size_t size(vector *self);
+size_t capacity(vector *self);
+int pop(vector *self);
 
 #endif /* VECTOR_H */

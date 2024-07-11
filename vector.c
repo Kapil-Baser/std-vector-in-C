@@ -50,3 +50,25 @@ void push_back(vector *self, int value)
         self->array[self->size++] = value;
     }
 }
+
+size_t size(vector *self)
+{
+    return self->size;
+}
+
+size_t capacity(vector *self)
+{
+    return self->capacity;
+}
+
+int pop(vector *self)
+{
+    int temp;
+    if (self == NULL && self->size == 0)
+    {
+        return -1;
+    }
+    temp = self->array[--self->size];
+    self->array[self->size] = 0;
+    return temp;
+}

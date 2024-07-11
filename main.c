@@ -5,7 +5,8 @@ int main(void)
 {
     vector array;
 
-    construct(&array, 0, 0);
+    construct(&array, 1, 5);
     push_back(&array, 10);
+    int t = pop(&array);
     return 0;
 }
